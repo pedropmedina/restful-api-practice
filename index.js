@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const mongoose = require('./db/mongoose');
 
 const usersRouter = require('./routers/users');
+const authRouter = require('./routers/auth');
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('combined'));
 
 app.use('/users', usersRouter);
+app.use('/auth', authRouter);
 
 app.listen(port, () => {
 	console.log(`Server is up on port ${port}`);

@@ -20,9 +20,7 @@ const userSchema = new Schema({
 userSchema.methods.generateAuthToken = function() {
 	const user = this;
 
-	const timestamp = new Date().getTime();
-
-	const token = jwt.sign({ _id: user._id, iat: timestamp }, 'secret');
+	const token = jwt.sign({ _id: user._id, isAdmin: false }, 'secret');
 	return token;
 };
 

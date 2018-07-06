@@ -17,6 +17,7 @@
 		"morgan": "^1.9.0"
 	},
 	"scripts": {
-		"start": "nodemon index.js"
+		"start": "nodemon index.js",
+		"play": "nodemon playground/joi.js"
 	}
 }
